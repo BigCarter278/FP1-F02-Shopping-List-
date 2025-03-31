@@ -1,6 +1,6 @@
-# cs30 FP1-F02 "Shopping List)
+# cs30 FP1-F02 "Shopping List) - Carter Flanagan
 
-
+#defining menu
 def display_menu():
     print("\nShopping List Menu:")
     print("1. Add item")
@@ -9,7 +9,7 @@ def display_menu():
     print("4. View shopping list")
     print("5. Calculate total cost")
     print("6. Exit")
-
+#defining item addition
 def add_item(shopping_list):
     item = input("Enter the item name: ")
     try:
@@ -18,7 +18,7 @@ def add_item(shopping_list):
         print(f"Added {item} with a cost of ${cost:.2f}")
     except ValueError:
         print("Invalid input. Please enter a valid cost.")
-
+#defining item modification
 def modify_item(shopping_list):
     item = input("Enter the item you want to modify: ")
     if item in shopping_list:
@@ -30,7 +30,7 @@ def modify_item(shopping_list):
             print("Invalid input. Please enter a valid cost.")
     else:
         print(f"{item} not found in the shopping list.")
-
+#defining item removal
 def delete_item(shopping_list):
     item = input("Enter the item you want to delete: ")
     if item in shopping_list:
@@ -38,7 +38,7 @@ def delete_item(shopping_list):
         print(f"Deleted {item} from the shopping list.")
     else:
         print(f"{item} not found in the shopping list.")
-
+#defining vieing the list
 def view_shopping_list(shopping_list):
     if shopping_list:
         print("\nShopping List:")
@@ -46,11 +46,11 @@ def view_shopping_list(shopping_list):
             print(f"{item}: ${cost:.2f}")
     else:
         print("The shopping list is empty.")
-
+#tells the total cost of items
 def calculate_total_cost(shopping_list):
     total_cost = sum(shopping_list.values())
     print(f"\nTotal cost of shopping list: ${total_cost:.2f}")
-
+#main menu
 def main():
     shopping_list = {}
     while True:
@@ -72,6 +72,6 @@ def main():
             break
         else:
             print("Invalid choice, please choose a number between 1 and 6.")
-
+#runs the program
 if __name__ == "__main__":
     main()
